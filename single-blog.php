@@ -31,90 +31,90 @@
    <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-    <!-- header-start -->
-    <header>
+   <!-- header-start -->
+   <header>
       <div class="header-area ">
-          <div id="sticky-header" class="main-header-area">
-              <div class="container-fluid">
-                  <div class="header_bottom_border">
-                      <div class="row align-items-center">
-                          <div class="col-xl-2 col-lg-2">
-                              <div class="logo">
-                                  <a href="index.html">
-                                      <img src="img/logo.png" alt="">
-                                  </a>
-                              </div>
-                          </div>
-                          <div class="col-xl-6 col-lg-6">
-                              <div class="main-menu  d-none d-lg-block">
-                                  <nav>
-                                      <ul id="navigation">
-                                          <li><a class="active" href="index.html">home</a></li>
-                                          <li><a href="about.html">About</a></li>
-                                          <li><a class="" href="travel_destination.html">Destination</a></l/li>
-                                          <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                              <ul class="submenu">
-                                                      <li><a href="destination_details.html">Destinations details</a></li>
-                                                      <li><a href="elements.html">elements</a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                              <ul class="submenu">
-                                                  <li><a href="blog.html">blog</a></li>
-                                                  <li><a href="single-blog.html">single-blog</a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="contact.html">Contact</a></li>
-                                      </ul>
-                                  </nav>
-                              </div>
-                          </div>
-                          <div class="col-xl-4 col-lg-4 d-none d-lg-block">
-                              <div class="social_wrap d-flex align-items-center justify-content-end">
-                                  <div class="number">
-                                      <p> <i class="fa fa-phone"></i> 10(256)-928 256</p>
-                                  </div>
-                                  <div class="social_links d-none d-xl-block">
-                                      <ul>
-                                          <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
-                                          <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
-                                          <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                          <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="seach_icon">
-                              <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
-                                  <i class="fa fa-search"></i>
-                              </a>
-                          </div>
-                          <div class="col-12">
-                              <div class="mobile_menu d-block d-lg-none"></div>
-                          </div>
-                      </div>
+         <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+               <div class="header_bottom_border">
+                  <div class="row align-items-center">
+                     <div class="col-xl-2 col-lg-2">
+                        <div class="logo">
+                           <a href="index.php">
+                              <img src="img/logo.png" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6">
+                        <div class="main-menu  d-none d-lg-block">
+                           <nav>
+                              <ul id="navigation">
+                                 <li><a class="active" href="index.php">home</a></li>
+                                 <li><a href="about.php">About</a></li>
+                                 <li><a class="" href="travel_destination.php">Destination</a></l /li>
+                                 <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                    <ul class="submenu">
+                                       <li><a href="destination_details.php">Destinations details</a></li>
+                                       <li><a href="elements.php">elements</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                    <ul class="submenu">
+                                       <li><a href="blog.php">blog</a></li>
+                                       <li><a href="single-blog.php">single-blog</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="contact.php">Contact</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                        <div class="social_wrap d-flex align-items-center justify-content-end">
+                           <div class="number">
+                              <p> <i class="fa fa-phone"></i> 10(256)-928 256</p>
+                           </div>
+                           <div class="social_links d-none d-xl-block">
+                              <ul>
+                                 <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                 <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                 <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                 <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="seach_icon">
+                        <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                           <i class="fa fa-search"></i>
+                        </a>
+                     </div>
+                     <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                     </div>
                   </div>
+               </div>
 
-              </div>
-          </div>
+            </div>
+         </div>
       </div>
-  </header>
-  <!-- header-end -->
+   </header>
+   <!-- header-end -->
 
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_4">
+   <!-- bradcam_area  -->
+   <div class="bradcam_area bradcam_bg_4">
       <div class="container">
-          <div class="row">
-              <div class="col-xl-12">
-                  <div class="bradcam_text text-center">
-                      <h3>Single blog</h3>
-                      <p>Pixel perfect design with awesome contents</p>
-                  </div>
-              </div>
-          </div>
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="bradcam_text text-center">
+                  <h3>Single blog</h3>
+                  <p>Pixel perfect design with awesome contents</p>
+               </div>
+            </div>
+         </div>
       </div>
-  </div>
-  <!--/ bradcam_area  -->
+   </div>
+   <!--/ bradcam_area  -->
 
    <!--================Blog Area =================-->
    <section class="blog_area single-post-area section-padding">
@@ -181,8 +181,7 @@
                   </div>
                   <div class="navigation-area">
                      <div class="row">
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                            <div class="thumb">
                               <a href="#">
                                  <img class="img-fluid" src="img/post/preview.png" alt="">
@@ -200,8 +199,7 @@
                               </a>
                            </div>
                         </div>
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                            <div class="detials">
                               <p>Next Post</p>
                               <a href="#">
@@ -321,8 +319,7 @@
                      <div class="row">
                         <div class="col-12">
                            <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
+                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="Write Comment"></textarea>
                            </div>
                         </div>
                         <div class="col-sm-6">
@@ -353,15 +350,13 @@
                      <form action="#">
                         <div class="form-group">
                            <div class="input-group mb-3">
-                              <input type="text" class="form-control" placeholder='Search Keyword'
-                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                              <input type="text" class="form-control" placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
                               <div class="input-group-append">
                                  <button class="btn" type="button"><i class="ti-search"></i></button>
                               </div>
                            </div>
                         </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Search</button>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Search</button>
                      </form>
                   </aside>
                   <aside class="single_sidebar_widget post_category_widget">
@@ -410,7 +405,7 @@
                      <div class="media post_item">
                         <img src="img/post/post_1.png" alt="post">
                         <div class="media-body">
-                           <a href="single-blog.html">
+                           <a href="single-blog.php">
                               <h3>From life was you fish...</h3>
                            </a>
                            <p>January 12, 2019</p>
@@ -419,7 +414,7 @@
                      <div class="media post_item">
                         <img src="img/post/post_2.png" alt="post">
                         <div class="media-body">
-                           <a href="single-blog.html">
+                           <a href="single-blog.php">
                               <h3>The Amazing Hubble</h3>
                            </a>
                            <p>02 Hours ago</p>
@@ -428,7 +423,7 @@
                      <div class="media post_item">
                         <img src="img/post/post_3.png" alt="post">
                         <div class="media-body">
-                           <a href="single-blog.html">
+                           <a href="single-blog.php">
                               <h3>Astronomy Or Astrology</h3>
                            </a>
                            <p>03 Hours ago</p>
@@ -437,7 +432,7 @@
                      <div class="media post_item">
                         <img src="img/post/post_4.png" alt="post">
                         <div class="media-body">
-                           <a href="single-blog.html">
+                           <a href="single-blog.php">
                               <h3>Asteroids telescope</h3>
                            </a>
                            <p>01 Hours ago</p>
@@ -512,11 +507,9 @@
                      <h4 class="widget_title">Newsletter</h4>
                      <form action="#">
                         <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                           <input type="email" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                         </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Subscribe</button>
                      </form>
                   </aside>
                </div>
@@ -527,154 +520,156 @@
    <!--================ Blog Area end =================-->
 
 
-    <!-- footer start -->
-    <footer class="footer">
+   <!-- footer start -->
+   <footer class="footer">
       <div class="footer_top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-xl-4 col-md-6 col-lg-4 ">
-                      <div class="footer_widget">
-                          <div class="footer_logo">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-4 col-md-6 col-lg-4 ">
+                  <div class="footer_widget">
+                     <div class="footer_logo">
+                        <a href="#">
+                           <img src="img/footer_logo.png" alt="">
+                        </a>
+                     </div>
+                     <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
+                        <a href="#">+10 367 826 2567</a> <br>
+                        <a href="#">contact@carpenter.com</a>
+                     </p>
+                     <div class="socail_links">
+                        <ul>
+                           <li>
                               <a href="#">
-                                  <img src="img/footer_logo.png" alt="">
+                                 <i class="ti-facebook"></i>
                               </a>
-                          </div>
-                          <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
-                              <a href="#">+10 367 826 2567</a> <br>
-                              <a href="#">contact@carpenter.com</a>
-                          </p>
-                          <div class="socail_links">
-                              <ul>
-                                  <li>
-                                      <a href="#">
-                                          <i class="ti-facebook"></i>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <i class="ti-twitter-alt"></i>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <i class="fa fa-instagram"></i>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <i class="fa fa-pinterest"></i>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <i class="fa fa-youtube-play"></i>
-                                      </a>
-                                  </li>
-                              </ul>
-                          </div>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="ti-twitter-alt"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="fa fa-instagram"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="fa fa-pinterest"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="fa fa-youtube-play"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
 
-                      </div>
                   </div>
-                  <div class="col-xl-2 col-md-6 col-lg-2">
-                      <div class="footer_widget">
-                          <h3 class="footer_title">
-                              Company
-                          </h3>
-                          <ul class="links">
-                              <li><a href="#">Pricing</a></li>
-                              <li><a href="#">About</a></li>
-                              <li><a href="#"> Gallery</a></li>
-                              <li><a href="#"> Contact</a></li>
-                          </ul>
-                      </div>
+               </div>
+               <div class="col-xl-2 col-md-6 col-lg-2">
+                  <div class="footer_widget">
+                     <h3 class="footer_title">
+                        Company
+                     </h3>
+                     <ul class="links">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#"> Gallery</a></li>
+                        <li><a href="#"> Contact</a></li>
+                     </ul>
                   </div>
-                  <div class="col-xl-3 col-md-6 col-lg-3">
-                      <div class="footer_widget">
-                          <h3 class="footer_title">
-                              Popular destination
-                          </h3>
-                          <ul class="links double_links">
-                              <li><a href="#">Indonesia</a></li>
-                              <li><a href="#">America</a></li>
-                              <li><a href="#">India</a></li>
-                              <li><a href="#">Switzerland</a></li>
-                              <li><a href="#">Italy</a></li>
-                              <li><a href="#">Canada</a></li>
-                              <li><a href="#">Franch</a></li>
-                              <li><a href="#">England</a></li>
-                          </ul>
-                      </div>
+               </div>
+               <div class="col-xl-3 col-md-6 col-lg-3">
+                  <div class="footer_widget">
+                     <h3 class="footer_title">
+                        Popular destination
+                     </h3>
+                     <ul class="links double_links">
+                        <li><a href="#">Indonesia</a></li>
+                        <li><a href="#">America</a></li>
+                        <li><a href="#">India</a></li>
+                        <li><a href="#">Switzerland</a></li>
+                        <li><a href="#">Italy</a></li>
+                        <li><a href="#">Canada</a></li>
+                        <li><a href="#">Franch</a></li>
+                        <li><a href="#">England</a></li>
+                     </ul>
                   </div>
-                  <div class="col-xl-3 col-md-6 col-lg-3">
-                      <div class="footer_widget">
-                          <h3 class="footer_title">
-                              Instagram
-                          </h3>
-                          <div class="instagram_feed">
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/1.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/2.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/3.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/4.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/5.png" alt="">
-                                  </a>
-                              </div>
-                              <div class="single_insta">
-                                  <a href="#">
-                                      <img src="img/instagram/6.png" alt="">
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
+               </div>
+               <div class="col-xl-3 col-md-6 col-lg-3">
+                  <div class="footer_widget">
+                     <h3 class="footer_title">
+                        Instagram
+                     </h3>
+                     <div class="instagram_feed">
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/1.png" alt="">
+                           </a>
+                        </div>
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/2.png" alt="">
+                           </a>
+                        </div>
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/3.png" alt="">
+                           </a>
+                        </div>
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/4.png" alt="">
+                           </a>
+                        </div>
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/5.png" alt="">
+                           </a>
+                        </div>
+                        <div class="single_insta">
+                           <a href="#">
+                              <img src="img/instagram/6.png" alt="">
+                           </a>
+                        </div>
+                     </div>
                   </div>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
       </div>
       <div class="copy-right_text">
-          <div class="container">
-              <div class="footer_border"></div>
-              <div class="row">
-                  <div class="col-xl-12">
-                      <p class="copy_right text-center">
-                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                      </p>
-                  </div>
-              </div>
-          </div>
+         <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+               <div class="col-xl-12">
+                  <p class="copy_right text-center">
+                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                     Copyright &copy;<script>
+                        document.write(new Date().getFullYear());
+                     </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  </p>
+               </div>
+            </div>
+         </div>
       </div>
-  </footer>
-  <!--/ footer end  -->
+   </footer>
+   <!--/ footer end  -->
 
-      <!-- Modal -->
-      <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+   <!-- Modal -->
+   <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
             <div class="serch_form">
-               <input type="text" placeholder="Search" >
+               <input type="text" placeholder="Search">
                <button type="submit">search</button>
             </div>
          </div>
       </div>
-      </div>
+   </div>
 
    <!-- JS here -->
    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
