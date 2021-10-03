@@ -1,3 +1,8 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -28,6 +33,109 @@
 
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <style>
+        #myDIV {
+            width: 100%;
+            padding: 10px;
+            background-color: #FF4A52;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        #myDIV p {
+            color: #fff;
+        }
+
+        #myDIV b {
+            color: #000;
+        }
+
+        .accordionWrapper {
+            padding: 10px;
+            background: #fff;
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .accordionItem {
+            float: left;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Open-sans', Arial, sans-serif;
+        }
+
+        .accordionItemHeading {
+            cursor: pointer;
+            margin: 0px 0px 10px 0px;
+            padding: 10px;
+            background: #FF4A52 !important;
+            color: #fff;
+            width: 100%;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .close .accordionItemContent {
+            height: 0px;
+            transition: height 1s ease-out;
+            -webkit-transform: scaleY(0);
+            -o-transform: scaleY(0);
+            -ms-transform: scaleY(0);
+            transform: scaleY(0);
+            float: left;
+            display: block;
+        }
+
+        .open .accordionItemContent {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            width: 100%;
+            margin: 0px 0px 10px 0px;
+            display: block;
+            -webkit-transform: scaleY(1);
+            -o-transform: scaleY(1);
+            -ms-transform: scaleY(1);
+            transform: scaleY(1);
+            -webkit-transform-origin: top;
+            -o-transform-origin: top;
+            -ms-transform-origin: top;
+            transform-origin: top;
+
+            -webkit-transition: -webkit-transform 0.4s ease-out;
+            -o-transition: -o-transform 0.4s ease;
+            -ms-transition: -ms-transform 0.4s ease;
+            transition: transform 0.4s ease;
+            box-sizing: border-box;
+        }
+
+        .open .accordionItemHeading {
+            margin: 0px;
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-topright: 3px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            -webkit-border-bottom-right-radius: 0px;
+            -webkit-border-bottom-left-radius: 0px;
+            -moz-border-radius-bottomright: 0px;
+            -moz-border-radius-bottomleft: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            background-color: #FF4A52 !important;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,103 +145,138 @@
 
     <!-- header-start -->
     <?php include('includes/header.php'); ?>
-    <!-- header-end -->
-    <div class="destination_banner_wrap overlay">
-        <div class="destination_text text-center">
-            <h3>Saintmartine Iceland</h3>
-            <p>Pixel perfect design with awesome contents</p>
-        </div>
-    </div>
 
-    <div class="destination_details_info">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-9">
-                    <div class="destination_info">
-                        <h3>Description</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <div class="single_destination">
-                            <h4>Day-01</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+    <?php
+    $pid = intval($_GET['pkgid']);
+    $sql = "SELECT * from tbltourpackages where PackageId=:pid";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':pid', $pid, PDO::PARAM_STR);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_OBJ);
+    $cnt = 1;
+    if ($query->rowCount() > 0) {
+        foreach ($results as $result) { ?>
+            <!-- header-end -->
+            <div class="destination_banner_wrap overlay">
+                <div class="destination_text text-center">
+                    <h3><?php echo htmlentities($result->PackageName); ?></h3>
+                </div>
+            </div>
+
+            <div class="destination_details_info">
+                <div class="container">
+                    <div class="row d-flex mb-5">
+                        <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex ">
+                            <div class="w-100">
+                                <h2 class="mb-4"><?php echo htmlentities($result->PackageName); ?></h2>
+                                <p><b>Package Location :</b> <?php echo htmlentities($result->PackageLocation); ?></p>
+                                <p><b>Package Schedule :</b> <?php echo htmlentities($result->PackageSchedule); ?></p>
+                                <p><b>Features :</b> <?php echo htmlentities($result->PackageFetures); ?></p>
+                                <a href="/package-payment.php?pkgid=<?php echo htmlentities($result->PackageId); ?>" class="btn btn-primary py-3 px-5">Book Now</a></p>
+                            </div>
                         </div>
-                        <div class="single_destination">
-                            <h4>Day-02</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
-                        <div class="single_destination">
-                            <h4>Day-03</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        <div class="col-md-6">
+                            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                    <li data-target="#demo" data-slide-to="1"></li>
+                                    <li data-target="#demo" data-slide-to="2"></li>
+                                </ul>
+
+                                <!-- The slideshow -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="admin/pacakgeimages/a1.jpg" alt="Los Angeles">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="admin/pacakgeimages/a2.jpg" alt="Chicago">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="admin/pacakgeimages/a3.jpg" alt="New York">
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
-                    <div class="bordered_1px"></div>
-                    <div class="contact_join">
-                        <h3>Contact for join</h3>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="single_input">
-                                        <input type="text" placeholder="Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="single_input">
-                                        <input type="text" placeholder="Phone no.">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="single_input">
-                                        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="submit_btn">
-                                        <button class="boxed-btn4" type="submit">submit</button>
-                                    </div>
+
+                    <div class="row d-flex">
+                        <div class="col">
+                            <section class="mb-2 align-items-center">
+                                <!-- Flights -->
+                                <a onclick="myFunction()" class="btn btn-primary btn-floating m-1" style="background-color: #39b7cd;padding: 20px; margin-right:20px;" role="button" aria-disabled="false"><i class="fa fa-plane fa-2x"></i></a>
+                                <!-- Hotel -->
+                                <a onclick="myFunction1()" class="btn btn-primary btn-floating m-1" style="background-color: #39b7cd;padding: 20px;margin-right:20px;" role="button" aria-disabled="false"><i class="fa fa-hotel fa-2x"></i></a>
+                                <!-- SightSeeing -->
+                                <a onclick="myFunction2()" class="btn btn-primary btn-floating m-1" style="background-color: #39b7cd; padding: 20px;margin-right:20px;" role="button" aria-disabled="false"><i class="fa fa-camera fa-2x"></i></a>
+                                <!-- Meals -->
+                                <a onclick="myFunction3()" class="btn btn-primary btn-floating m-1" style="background-color: #39b7cd;padding: 20px;margin-right:20px;" role="button" aria-disabled="true"><i class="fa fa-cutlery fa-2x"></i></a>
+                            </section>
+                            <div id="myDIV">
+                                <p><b>Package Flights :</b><br> <?php echo htmlentities($result->PackageFlights); ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex">
+                        <div class="accordionWrapper">
+                            <div class="accordionItem open">
+                                <h2 class="accordionItemHeading">What you Tour Price includes?</h2>
+                                <div class="accordionItemContent">
+                                    <p><?php echo $result->PackageTourIncludes; ?></p>
                                 </div>
                             </div>
-                        </form>
+
+                            <div class="accordionItem close">
+                                <h2 class="accordionItemHeading">What you Tour Price does not include?</h2>
+                                <div class="accordionItemContent">
+                                    <p><?php echo $result->PackageTourNotIncludes; ?></p>
+                                </div>
+                            </div>
+
+                            <div class="accordionItem close">
+                                <h2 class="accordionItemHeading">Visa, Passport and Insurance</h2>
+                                <div class="accordionItemContent">
+                                    <p><?php echo $result->PackageVisa; ?></p>
+                                </div>
+                            </div>
+
+                            <div class="accordionItem close">
+                                <h2 class="accordionItemHeading">Itinerary</h2>
+                                <div class="accordionItemContent">
+                                    <p><?php echo $result->PackageItinerary; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex">
+                        <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex fadeInUp ftco-animated">
+                            <div class="w-100">
+                                <h2 class="mb-4">Payment Policy</h2>
+                                <p><?php echo $result->PackagePaymentPolicy; ?></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 heading-section ftco-animate d-flex fadeInUp ftco-animated">
+                            <div class="w-100">
+                                <h2 class="mb-4">Cancellation Policy</h2>
+                                <p><?php echo $result->PackageCancellationPolicy; ?></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- newletter_area_start  -->
-    <div class="newletter_area overlay">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-10">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5">
-                            <div class="newsletter_text">
-                                <h4>Subscribe Our Newsletter</h4>
-                                <p>Subscribe newsletter to get offers and about
-                                    new places to discover.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="mail_form">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-9 col-md-8">
-                                        <div class="newsletter_field">
-                                            <input type="email" placeholder="Your mail">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4">
-                                        <div class="newsletter_btn">
-                                            <button class="boxed-btn4 " type="submit">Subscribe</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- newletter_area_end  -->
+    <?php }
+    } ?>
 
     <div class="popular_places_area">
         <div class="container">
@@ -292,6 +435,47 @@
                 rightIcon: '<span class="fa fa-caret-down"></span>'
             }
         });
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+            document.getElementById("myDIV").innerHTML = "<p><b>Package Flights :</b><br> <?php echo htmlentities($result->PackageFlights); ?></p>";
+        }
+
+        function myFunction1() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+            document.getElementById("myDIV").innerHTML = "<p><b>Package Hotels :</b><br> <?php echo htmlentities($result->PackageHotels); ?></p>";
+        }
+
+        function myFunction2() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+            document.getElementById("myDIV").innerHTML = "<p><b>Package Sightseeing :</b><br> <?php echo htmlentities($result->PackageSightseeing); ?></p>";
+        }
+
+        function myFunction3() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+            document.getElementById("myDIV").innerHTML = "<p><b>Package Meals :</b><br> <?php echo htmlentities($result->PackageMeals); ?></p>";
+        }
+
+        var accItem = document.getElementsByClassName('accordionItem');
+        var accHD = document.getElementsByClassName('accordionItemHeading');
+        for (i = 0; i < accHD.length; i++) {
+            accHD[i].addEventListener('click', toggleItem, false);
+        }
+
+        function toggleItem() {
+            var itemClass = this.parentNode.className;
+            for (i = 0; i < accItem.length; i++) {
+                accItem[i].className = 'accordionItem close';
+            }
+            if (itemClass == 'accordionItem close') {
+                this.parentNode.className = 'accordionItem open';
+            }
+        }
     </script>
 </body>
 

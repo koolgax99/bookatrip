@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+error_reporting(0);
+include('includes/config.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -94,229 +101,46 @@
     <div class="popular_places_area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="filter_result_wrap">
-                        <h3>Filter Result</h3>
-                        <div class="filter_bordered">
-                            <div class="filter_inner">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="single_select">
-                                            <select>
-                                                <option data-display="Country">Country</option>
-                                                <option value="1">Africa</option>
-                                                <option value="2">canada</option>
-                                                <option value="4">USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_select">
-                                            <select>
-                                                <option data-display="Travel type">Travel type</option>
-                                                <option value="1">advance</option>
-                                                <option value="2">advance</option>
-                                                <option value="4">premium</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="range_slider_wrap">
-                                            <span class="range">Prise range</span>
-                                            <div id="slider-range"></div>
-                                            <p>
-                                                <input type="text" id="amount" readonly style="border:0; color:#7A838B; font-weight:400;">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                            <div class="reset_btn">
-                                <button class="boxed-btn4" type="submit">Reset</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
+                <div class="col">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/1.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>California</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
+                        <?php $sql = "SELECT * from tbltourpackages";
+                        $query = $dbh->prepare($sql);
+                        $query->execute();
+                        $results = $query->fetchAll(PDO::FETCH_OBJ);
+                        $cnt = 1;
+                        if ($query->rowCount() > 0) {
+                            foreach ($results as $result) {  ?>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single_place">
+                                        <div class="thumb">
+                                            <img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage); ?>" alt="">
+                                            <a href="#" class="prise">₹ <?php echo htmlentities($result->PackagePrice); ?></a>
+                                        </div>
+                                        <div class="place_info">
+                                            <a href="destination_details.php?pkgid=<?php echo htmlentities($result->PackageId); ?>">
+                                                <h3><?php echo htmlentities($result->PackageName); ?></h3>
+                                            </a>
+                                            <p><?php echo htmlentities($result->PackageLocation); ?></p>
+                                            <div class="rating_days d-flex justify-content-between">
+                                                <span>
+                                                    <ul>
+                                                        <span class="fa fa-plane"></span>
+                                                        <span class="fa fa-bed"></span>
+                                                        <span class="fa fa-cutlery"></span>
+                                                        <span class="fa fa-camera"></span>
+                                                    </ul>
+                                                </span>
+                                                <div class="days">
+                                                    <i class="fa fa-clock-o"></i>
+                                                    <a href="destination_details.php?pkgid=<?php echo htmlentities($result->PackageId); ?>"><?php echo htmlentities($result->PackageDays); ?> Days</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/2.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>Korola Megna</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/3.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>London</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/4.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>Miami Beach</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/5.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>California</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="img/place/6.png" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.php">
-                                        <h3>Saintmartine Iceland</h3>
-                                    </a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="more_place_btn text-center">
-                                <a class="boxed-btn4" href="#">More Places</a>
-                            </div>
-                        </div>
+                        <?php $cnt++;
+                            }
+                        } ?>
                     </div>
                 </div>
             </div>

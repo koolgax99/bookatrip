@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+error_reporting(0);
+?>
 <header>
     <div class="header-area ">
         <div id="sticky-header" class="main-header-area">
@@ -15,16 +21,16 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.php">home</a></li>
+                                        <li><a href="index.php">home</a></li>
                                         <li><a href="about.php">About</a></li>
-                                        <li><a class="" href="travel_destination.php">Destination</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.php">blog</a></li>
-                                                <li><a href="single-blog.php">single-blog</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="travel_destination.php">Destination</a></li>
                                         <li><a href="contact.php">Contact</a></li>
+                                        <?php if ($_SESSION['login'] === true) { ?>
+                                            <li><a href="profile.php" class="nav-link">Profile</a></li>
+                                            <li><a class="active" href="logout.php" class="nav-link">Logout</a></li>
+                                        <?php } else { ?>
+                                            <li><a href="login.php" class="nav-link">Login</a></li>
+                                        <?php } ?>
                                     </ul>
                                 </nav>
                             </div>

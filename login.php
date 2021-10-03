@@ -3,6 +3,11 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 
+if (isset($_SESSION["login"]) && $_SESSION["login"] === true) {
+    header("location: profile.php");
+    exit;
+}
+
 if (isset($_POST['signin'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
@@ -13,7 +18,9 @@ if (isset($_POST['signin'])) {
     $query->execute();
     $results = $query->fetchAll(PDO::FETCH_OBJ);
     if ($query->rowCount() > 0) {
-        $_SESSION['login'] = $_POST['email'];
+        session_start();
+        $_SESSION['login'] = true;
+        $_SESSION['email'] = $_POST['email'];
         echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
     } else {
         echo "<script>alert('Invalid Details');</script>";
