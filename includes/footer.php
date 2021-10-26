@@ -48,13 +48,15 @@
                 <div class="col-xl-2 col-md-6 col-lg-2">
                     <div class="footer_widget">
                         <h3 class="footer_title">
-                            Company
+                            Information
                         </h3>
                         <ul class="links">
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#"> Gallery</a></li>
-                            <li><a href="#"> Contact</a></li>
+                            <li><a href="#">Online Enquiry</a></li>
+                            <li><a href="#">General Enquiries</a></li>
+                            <li><a href="page.php?type=terms">Terms and Conditions</a></li>
+                            <li><a href="page.php?type=privacy">Privacy Policy</a></li>
+                            <li><a href="cancellation-policy.php">Cancellation Policy</a></li>
+                            <li><a href="contact.php">Call Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -64,14 +66,10 @@
                             Popular destination
                         </h3>
                         <ul class="links double_links">
-                            <li><a href="#">Indonesia</a></li>
-                            <li><a href="#">America</a></li>
-                            <li><a href="#">India</a></li>
-                            <li><a href="#">Switzerland</a></li>
-                            <li><a href="#">Italy</a></li>
+                            <li><a href="#">USA</a></li>
                             <li><a href="#">Canada</a></li>
-                            <li><a href="#">Franch</a></li>
-                            <li><a href="#">England</a></li>
+                            <li><a href="#">Europe</a></li>
+                            <li><a href="#">UK</a></li>
                         </ul>
                     </div>
                 </div>
@@ -126,7 +124,7 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </script> PIQNPOQ All rights reserved
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
